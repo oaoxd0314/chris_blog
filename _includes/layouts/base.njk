@@ -65,7 +65,7 @@
             <a href="{{ entry.url | url }}">{{ entry.title }}</a>
           {%- endfor %}
         </div>
-        <div id="reading-progress" aria-hidden="true"></div>
+        {# <div id="reading-progress" aria-hidden="true"></div> #}
       </nav>
       <h1>{{ title }}</h1>
       {% block extraArticleHeader %}{% endblock %}
@@ -91,7 +91,8 @@
     </main>
 
     <footer>
-      <a href="/about/">{{ metadata.author.name }}</a>
+      © 2022 {{ metadata.author.name }}. All Rights Reserved.
+      {# <a href="/about/">{{ metadata.author.name }}</a> #}
     </footer>
 
     <!-- Current page: {{ page.url | url }} -->

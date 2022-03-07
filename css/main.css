@@ -2,11 +2,74 @@
 :root {
   --primary: #f9c412;
   --primary-dark: #e7bf60;
+  --bg-light: #fff;
+  --bg-dark: #181818;
+  --font-color: #181818;
+  --font-color-dark-version: #eee
 }
 
 .test-dead-code-elimination-sentinel {
   color: red;
 }
+/* hand made style */
+
+.post-article{
+  box-shadow: inset 0 -1px 0 rgb(230 230 230)
+}
+
+/* hand made layout */
+
+.fx-r{
+  display: flex;
+  flex-direction: row;
+}
+
+.fx-c{
+  display: flex;
+  flex-direction: column;
+}
+
+.fi{
+  flex: 1 1 auto;
+}
+
+.fx-r .dl{
+  display: block;
+}
+
+.d-b{
+  display:block
+}
+
+.m-t-sm{
+  margin-top: 12px
+}
+
+.m-l-lg{
+  margin-left: 48px;
+}
+
+.m-l-md{
+  margin-left: 32px;
+}
+
+.p-tb-lg{
+  padding: 48px 0;
+}
+
+.p-tb-md{
+  padding: 32px 0;
+}
+
+.p-t-sm{
+  padding-top: 24px;
+}
+
+.p-b-xs{
+  padding-bottom: 8px
+}
+
+/* end of hand made layout */
 
 /*
   Make image rasterization lazy. This means that e.g. the cost of the
@@ -113,6 +176,37 @@ header aside {
 #posts li {
   margin-bottom: 0.5em;
 }
+
+#posts #article #content{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-height: 72px;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+  overflow: hidden;
+  line-height: 24px;
+  font-size: 16px;
+  
+}
+
+#posts #article #title{
+  line-height: 28px;
+  font-size: 22px
+}
+
+#posts .fake-img{
+  width: 112px;
+  aspect-ratio: auto 112 / 112;
+  height: 112px;
+  background-color: var(--primary)
+}
+
+/* #posts img{
+  width: 112px;
+  aspect-ratio: auto 112 / 112;
+  height: 112px;
+} */
 
 /* https://github.com/rsms/inter/blob/master/LICENSE.txt
 
@@ -834,8 +928,8 @@ video {
 }
 body {
   font-family: var(--font-family);
-  background: #181818;
-  color: #eee;
+  background: var(--bg-light);
+  color: var(--font-color);
 }
 section {
   margin-left: auto;
