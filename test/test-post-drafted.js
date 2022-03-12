@@ -17,36 +17,36 @@ describe("Draft posts", function () {
     console.log("Skipping test because in dev mode drafts are written out.");
     return;
   }
-  describe("draft post", () => {
-    const DRAFT_POST = "_site/posts/fifthpost/index.html";
+  // describe("draft post", () => {
+  //   const DRAFT_POST = "_site/posts/fifthpost/index.html";
 
-    it("w. draft: true should NOT be rendered", () => {
-      var draftfileexists = false;
-      try {
-        if (existsSync(DRAFT_POST)) {
-          draftfileexists = true;
-        }
-      } catch (err) {
-        throw err;
-      }
+  //   it("w. draft: true should NOT be rendered", () => {
+  //     var draftfileexists = false;
+  //     try {
+  //       if (existsSync(DRAFT_POST)) {
+  //         draftfileexists = true;
+  //       }
+  //     } catch (err) {
+  //       throw err;
+  //     }
 
-      expect(!draftfileexists).to.be(true);
-    });
-  });
-  describe("draft post from future", () => {
-    const DRAFT_POST_FUTURE = "_site/posts/sixthpostdraft/index.html";
+  //     expect(!draftfileexists).to.be(true);
+  //   });
+  // });
+  // describe("draft post from future", () => {
+  //   const DRAFT_POST_FUTURE = "_site/posts/sixthpostdraft/index.html";
 
-    it("should NOT be rendered", () => {
-      var draftpostfutureexists = false;
-      try {
-        if (existsSync(DRAFT_POST_FUTURE)) {
-          draftpostfutureexists = true;
-        }
-      } catch (err) {
-        throw err;
-      }
+  //   it("should NOT be rendered", () => {
+  //     var draftpostfutureexists = false;
+  //     try {
+  //       if (existsSync(DRAFT_POST_FUTURE)) {
+  //         draftpostfutureexists = true;
+  //       }
+  //     } catch (err) {
+  //       throw err;
+  //     }
 
-      expect(!draftpostfutureexists).to.be(true);
-    });
-  });
+  //     expect(!draftpostfutureexists).to.be(true);
+  //   });
+  // });
 });

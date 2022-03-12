@@ -192,7 +192,8 @@ header aside {
 
 #posts #article #title{
   line-height: 28px;
-  font-size: 22px
+  font-size: 22px;
+  font-weight: 700
 }
 
 #posts .fake-img{
