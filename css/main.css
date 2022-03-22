@@ -132,6 +132,33 @@ share-widget button:active {
   transform: scale(1.2);
 }
 
+book-guide{
+  position: fixed;
+  left:30px;
+  top:100px;
+  max-height: calc( 70vh - 100px );
+  overflow: auto;
+}
+
+book-guide ul{
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+book-guide li{
+  position: relative;
+  display: block;
+}
+
+book-guide li a{
+  display: block;
+  padding: 4px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #767676;
+}
+
 dialog {
   background-color: #8dff80;
   position: fixed;
