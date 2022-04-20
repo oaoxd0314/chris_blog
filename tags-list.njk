@@ -6,5 +6,7 @@ layout: layouts/home.njk
 
 {% for tag in collections.tagList %}
   {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+  <span id="post-tag">
+    <a href="{{ tagUrl | url }}">{{ tag }}</a>
+  </span>
 {% endfor %}

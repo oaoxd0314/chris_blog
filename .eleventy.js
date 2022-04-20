@@ -61,6 +61,9 @@ const CleanCSS = require("clean-css");
 const GA_ID = require("./_data/metadata.json").googleAnalyticsId;
 const { cspDevMiddleware } = require("./_11ty/apply-csp.js");
 
+
+const nowDate = new Date()
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -152,6 +155,22 @@ module.exports = function (eleventyConfig) {
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+
+  eleventyConfig.addFilter("recentlyPost",(arr)=>{
+    // let posts  =[]
+    // let thirtyDay = 1000*60*60*24*30
+    // let rencentlyDate =  nowDate.getTime() - thirtyDay
+
+    // arr.forEach(post=>{
+    //     let timestamp = toUTCTimeStamp(post.data.date).getTime()
+    //     if( timestamp > rencentlyDate){
+    //         posts.push(post)
+    //     }
+    // })
+
+    return arr
+})
+
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
@@ -172,6 +191,14 @@ module.exports = function (eleventyConfig) {
 
     return array.slice(0, n);
   });
+
+  eleventyConfig.addFilter("imgUrlDefaultChecker",function(url){
+    if(!url){
+      return 'https://cdn.pixabay.com/photo/2020/08/30/20/54/rice-field-5530707_1280.jpg'
+    }
+
+    return url
+  })
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByTag("posts");

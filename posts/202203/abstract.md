@@ -6,8 +6,6 @@ date: 2022-03-22
 scheduled: 2022-03-22
 layout: layouts/post.njk
 ---
-# DRY 第一哩路 - 抽象化
-
 當我們把一段程式碼包成一個 function 時，其實就是在作抽象化，良好的抽象化可以讓 function 更有彈性，也更容易維護、使用，假設現在有一個需要過濾物件的 function：
 
 ```javascript

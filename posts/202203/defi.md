@@ -4,10 +4,14 @@ description: 去中心化金融（Decentralized Finance 以下簡稱 DeFi ）是
 date: 2022-03-18
 scheduled: 2022-03-18
 layout: layouts/post.njk
-tags: WEB 3.0,DeFi,加密貨幣,NFT
+image: https://i.imgur.com/E5exCA4.png
+imageAlt: 'Defi img'
+tags: 
+    # - WEB 3.0
+    - DeFi
+    # - 加密貨幣 
+    # - NFT
 ---
-# Defi 解析大補帖
-
 ### 投資加密貨幣有賺有賠，以下內容均不構成投資建議
 
 去中心化金融（Decentralized Finance 以下簡稱 DeFi ）是指金融交易不需要任何中介第三方來承認、監督就能完成交易的金融。

@@ -3,6 +3,8 @@ title: GraphQL - 所見即所得
 description: GraphQL 是一個 API 的查詢語言，他的主要目的在於能夠讓 client 以更為輕便彈性的方式去獲取資料。
 date: 2022-03-12
 scheduled: 2022-03-12
+image: https://i.imgur.com/OyROw1o.png
+imageAlt: 'graphql img'
 tags: graphQl
 layout: layouts/post.njk
 ---

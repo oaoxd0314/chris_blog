@@ -6,11 +6,8 @@ scheduled: 2022-03-18
 layout: layouts/post.njk
 tags: Functional Programming
 ---
+## 為什麼需要組合函數
 
-# FP - 組合函數 Compose vs Pipe
-
-
-# 為什麼需要組合函數
 接續上篇 [curry](https://hackmd.io/@ChrisW/SJNNgcyWq)，我們講解了如何將一個函式拆解成一個個可重複利用的 curry function，[very beautiful,very powerful]((https://www.youtube.com/watch?v=Z-TxcpB6yNY))。
 
 但連結過多的 function 將會讓可看性大幅度下低，就如同下面的例子：
@@ -50,10 +47,9 @@ A(B(C(...(get5Characters(uppercase(getName(data)))))) // ....
 這樣一來別說你同事會想貓你一拳，連你自己都會想把這行刪掉。
 
 > curry 其實就只是一個將 function [抽象化](https://hackmd.io/MZvwMweFR-Sv1RMTXRvXkg)的過程，重複可使用的 function 能大幅提高程式的簡潔度，更有降低耦合提高內聚的良好功用。
-
 >以上內容都會在說明 [Functional Programming](https://hackmd.io/NeQCFGazQ3i4FC1UtGrP6w) 時詳細說明，你可以先把他暫時想成另一種相比於 OOP 的另一種 Design Pattern 就好 。
 
-# Compose
+## Compose
 
 開門見山的說，這就是 compose :
 
@@ -67,12 +63,12 @@ const compose = function(g, f) {
 // 或者採用 arrow function 的寫法 會更加整潔
 const compose = (g,f) => x => g(f(x));
 ```
+
 我們可以藉由 compose 將兩個 function 結合，達到讓程式碼簡化的目的。
 
 可以注意到的是，在 compose 的定義中，f 會在 g 之前執行，而建立一個**由右至左的資料流**，也可以稱為左傾（left direction），注意是由右至左，而非由內而外。
 
 ![其實 compose 這概念也是從數學來的 photo by medium](https://i.imgur.com/TCOs2DZ.png)
-
 
 現在將上述的例子使用 compose 實作看看：
 
@@ -119,7 +115,7 @@ uppercaseName(data) // FRANK
 
 這邊需要在注意一次順序，由於 compose 是由右至左的運算過程，因此會將最需要先執行 `getName` 放在第一個。
 
-# Pipe
+## Pipe
 
 pipe 和 compose 唯一的差別就是執行順序（ `reduce` ＆ `reduceRight`），因此可以說 pipe 就像是反向的 compose：
 
@@ -136,7 +132,7 @@ const data = {name:'FrankChou'}
 uppercaseName(data) // FRANK
 ```
 
-# Point free
+### Point free
 
 > Pointfree style means never having to say your data
 
@@ -166,7 +162,7 @@ Pointfree 幫助我們移除不必要的命名，讓程式碼保持簡潔和通�
 
 > PureFunction 意指相同的輸入，永遠會得到相同的輸出，而且沒有任何顯著的副作用
 
-# DeBug
+### DeBug
 
 先看個範例：
 
@@ -229,13 +225,13 @@ latin(data)
 
 > 這個 trace function 可以算是一個簡單的示範，如果 compose 之中有更多複雜的資料流，就可以使用更多的監控方式。    
 
-# 總結
+## 總結
 
 事實上 pipe compose 等實用的功能都有人整理成函式庫，例如：[ramda](https://www.npmjs.com/package/ramda)、[lodash](https://www.npmjs.com/package/lodash)、[underscore](https://www.npmjs.com/package/underscore)。
 
 他們的作用都是大神們整理好的實用 function，讓人不用費心理解底層實作就能立即使用。
 
-# 參考連結
+## 參考連結
 
 知乎 [https://zhuanlan.zhihu.com/p/52207982](https://zhuanlan.zhihu.com/p/52207982)
 freecodecamp [https://www.freecodecamp.org/news/pipe-and-compose-in-javascript-5b04004ac937/](https://www.freecodecamp.org/news/pipe-and-compose-in-javascript-5b04004ac937/)

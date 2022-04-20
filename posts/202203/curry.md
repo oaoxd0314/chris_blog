@@ -4,6 +4,8 @@ description: 柯里化 (Currying) 是指，將接受 n 個參數的 function 轉
 date: 2022-03-12
 scheduled: 2022-03-12
 tags: Functional Programming
+image: https://i.imgur.com/8aoyqbg.png
+imageAlt: 'curry image'
 layout: layouts/post.njk
 ---
 ![an image](https://i.imgur.com/8aoyqbg.png)

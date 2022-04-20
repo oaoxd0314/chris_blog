@@ -1,5 +1,4 @@
-
-{% for post in postslist | reverse %}
+{% for post in postslist | reverse | recentlyPost%}
   <div id="article" class="post-article">
     <div class="p-t-sm">
       <div class="fx-c">
@@ -22,7 +21,8 @@
           </div>
 
           <div class="dl m-l-md">
-            <div class="fake-img"></div>
+            {# <div class="fake-img"></div> #}
+            <img src="{{post.data.image}}" alt="{{post.data.imageAlt}}" class="post-img">
           </div>
 
         </div>
