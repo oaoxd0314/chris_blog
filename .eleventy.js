@@ -68,6 +68,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  
 
   eleventyConfig.addPlugin(localImages, {
     distPath: "_site",
@@ -206,6 +207,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy('./src/admin')
   // We need to copy cached.js only if GA is used
   eleventyConfig.addPassthroughCopy(GA_ID ? "js" : "js/*[!cached].*");
   eleventyConfig.addPassthroughCopy("fonts");

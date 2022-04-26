@@ -92,6 +92,12 @@
       </article>
     </main>
 
+    <footer>
+      © 2022 {{ metadata.author.name }}. All Rights Reserved.
+      {# <a href="/about/">{{ metadata.author.name }}</a> #}
+    </footer>
+    <!-- Current page: {{ page.url | url }} -->
+
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -103,11 +109,5 @@
         });
       }
     </script>
-
-    <footer>
-      © 2022 {{ metadata.author.name }}. All Rights Reserved.
-      {# <a href="/about/">{{ metadata.author.name }}</a> #}
-    </footer>
-    <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>
